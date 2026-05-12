@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #050816;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at top left, rgba(0,255,255,0.15), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(0,255,255,0.08), transparent 40%),
+        #050816;
+    z-index: -2;
+}
+
+.cursor-glow {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(0,255,255,0.12);
+    pointer-events: none;
+    filter: blur(40px);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+header {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+header h1 {
+    font-size: 5rem;
+    color: cyan;
+    text-shadow: 0 0 20px cyan;
+    animation: glow 2s infinite alternate;
+}
+
+header p {
+    margin-top: 15px;
+    opacity: 0.8;
+    font-size: 1.2rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.project-card {
+    width: 320px;
+    padding: 30px;
+    border: 2px solid cyan;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(0,255,255,0.2);
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 35px cyan;
+}
+
+.project-card h2 {
+    color: cyan;
+    margin-bottom: 10px;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px cyan;
+    }
+
+    to {
+        text-shadow: 0 0 25px cyan;
+    }
+}
+
+@media (max-width: 700px) {
+    header h1 {
+        font-size: 3rem;
+    }
+}

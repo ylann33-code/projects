@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuralMatch</title>
+    <link rel="stylesheet" href="neuralmatch.css">
+</head>
+<body>
+
+<div class="background"></div>
+<div class="cursor-glow"></div>
+
+<a href="index.html" class="back-button">← Back</a>
+
+<h1 class="title">NeuralMatch</h1>
+
+<div class="container">
+
+    <div class="side left">
+        <h2>You</h2>
+
+        <input type="text" id="name1" placeholder="First Name">
+        <input type="number" id="age1" placeholder="Age">
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="side right">
+        <h2>Partner</h2>
+
+        <input type="text" id="name2" placeholder="First Name">
+        <input type="number" id="age2" placeholder="Age">
+    </div>
+
+</div>
+
+<button id="calculateBtn">CALCULATE</button>
+
+<div class="loading" id="loading">
+    Analyzing compatibility...
+</div>
+
+<div class="result-container">
+    <div id="percentage">0%</div>
+    <div id="message"></div>
+</div>
+
+
+<audio id="calcSound" src="sounds/calculate.mp3"></audio>
+
+<script src="neuralmatch.js"></script>
+</body>
+</html>
