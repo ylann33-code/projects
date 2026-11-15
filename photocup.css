@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #fff;
+    background: #100711;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 22px 40px;
+    transition: opacity 0.3s ease;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 65, 160, 0.22), transparent 38%),
+        radial-gradient(circle at 85% 80%, rgba(190, 50, 140, 0.16), transparent 42%),
+        #100711;
+}
+
+.cursor-glow {
+    position: fixed;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(255, 90, 180, 0.15);
+    filter: blur(45px);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.back-button {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: #ff9acb;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.back-button:hover {
+    color: #fff;
+}
+
+.page-content {
+    width: 100%;
+    max-width: 760px;
+    text-align: center;
+}
+
+.eyebrow {
+    color: #ff8bc5;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    margin-bottom: 18px;
+}
+
+.title {
+    color: #ff78bb;
+    font-size: clamp(3.2rem, 10vw, 5.8rem);
+    text-shadow: 0 0 28px rgba(255, 90, 180, 0.55);
+}
+
+.subtitle {
+    max-width: 540px;
+    margin: 18px auto 42px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+    font-size: 1.08rem;
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.action-button {
+    min-height: 125px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px;
+    border: 1px solid rgba(255, 130, 195, 0.45);
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.055);
+    backdrop-filter: blur(12px);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.action-button:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 105, 180, 0.12);
+    box-shadow: 0 12px 35px rgba(255, 70, 160, 0.2);
+}
+
+.action-button.primary {
+    border-color: #ff69b4;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(255, 255, 255, 0.04));
+}
+
+.button-icon {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    color: #180916;
+    background: #ff8bc5;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.action-button strong,
+.action-button small {
+    display: block;
+}
+
+.action-button strong {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.action-button small {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.82rem;
+}
+
+@media (max-width: 620px) {
+    .actions {
+        grid-template-columns: 1fr;
+    }
+
+    .action-button {
+        min-height: 105px;
+    }
+
+    .back-button {
+        top: 20px;
+        left: 18px;
+    }
+}
