@@ -55,8 +55,10 @@ header p {
 main {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 40px;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 28px;
+    padding: 40px 20px;
 }
 
 .project-card {
@@ -80,6 +82,19 @@ main {
 .project-card h2 {
     color: cyan;
     margin-bottom: 10px;
+}
+
+.project-card.photocup-card {
+    border-color: #ff69b4;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+}
+
+.project-card.photocup-card h2 {
+    color: #ff8bc5;
+}
+
+.project-card.photocup-card:hover {
+    box-shadow: 0 0 35px rgba(255, 105, 180, 0.65);
 }
 
 @keyframes glow {
